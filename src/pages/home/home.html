@@ -1,18 +1,22 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+<ion-content class="container">
+  <div class="titleContainer">
+    <p class="title">MEETUTU</p>
+  </div>
+  
+  <div class="buttonContainer">
+    <button ion-button icon-right block large color="danger" class="googleButton" (tap)="signIn()"> 
+      Sign in
+      <ion-icon name="person"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <br>
+    <button ion-button icon-right block large color="danger" class="googleButton" (tap)="signUp()"> 
+      Register
+      <ion-icon name="person-add"></ion-icon>
+    </button>
+    <br>
+    <button ion-button icon-right block large color="light" clear (tap)="about()">
+      About
+      <ion-icon name="help"></ion-icon>
+    </button>
+  </div>
 </ion-content>

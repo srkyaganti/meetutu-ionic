@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <ion-title>MEETUTU</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <h1>Sign In</h1>
+    <ion-list>
+      
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required="true"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" ></ion-input>
+      </ion-item>
+
+    </ion-list>
+      
+      <button ion-button icon-right block large color="theme" (tap)="signIn()" >
+        Sign In
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+
+</ion-content>

@@ -1,0 +1,49 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true" color="theme">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bgGray">
+  <ion-card class="card">
+      
+    <ion-card-header>
+      Skills
+      <button ion-button icon-only clear color="theme"  (tap)="save()" class="iconButton">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </button>
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <div *ngIf="selectedSkills.length != 0">
+        <h4>Selected Skills:</h4>
+        <button class="skillButton" ion-button icon-right *ngFor="let skill of selectedSkills" (click)="removeSkill(skill)">
+          {{skill}}
+          <ion-icon name="close" item-left></ion-icon>
+        </button>  
+      </div>
+
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Search</ion-label>
+          <ion-input type="text" [(ngModel)]="searchText" (ionChange)='search()'></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+
+      <div *ngIf="matchedSkills.length != 0" >
+        <button ion-button icon-right *ngFor="let skill of matchedSkills" (click)="addSkill(skill)">
+          {{skill}}
+          <ion-icon name="add" item-left></ion-icon>
+        </button>
+      </div>
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

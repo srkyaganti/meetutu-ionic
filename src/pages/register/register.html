@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <ion-title>MEETUTU</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <h1>Registration</h1>
+    <div *ngIf="errors.length > 0">
+      <ion-list>
+        <ion-item *ngFor="let error of errors" class="error">
+          {{error}}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-list>
+      
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required="true"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password_confirmation" ></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Mobile No.</ion-label>
+        <ion-input type="number" [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Role</ion-label>
+        <ion-select [(ngModel)]="role">
+          <ion-option value="Learn">Learn</ion-option>
+          <ion-option value="Teach">Teach</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+      
+      <button ion-button icon-right block large color="theme" (tap)="register()" >
+        Sign Up
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+
+</ion-content>

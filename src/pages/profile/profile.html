@@ -1,0 +1,63 @@
+
+<ion-header>
+    <ion-navbar hideBackButton="true" color="theme">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Profile</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+
+<ion-content class="bgGray">
+
+    <ion-card class="card">
+        
+      <ion-card-header>
+        Details
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div>
+          <label>Name: </label>
+          <span>{{ user.name }}</span>
+        </div>
+        <hr>
+        <div>
+          <label>Email: </label>
+          <span>{{ user.email }}</span>
+        </div>
+        <hr>
+        <div>
+          <label>Mobile Number: </label>
+          <span>{{ user.mobile }}</span>
+        </div>
+        <hr>
+      </ion-card-content>
+    
+    </ion-card>
+
+    <ion-card class="card" *ngIf="user.role == role">
+        
+      <ion-card-header>
+        Skills
+        <button ion-button icon-only clear color="theme" (tap)="editItems()" class="iconButton">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <div>
+          <button ion-button color="dark"  *ngFor="let skill of skills" disabled="true">
+            {{skill}}
+          </button>
+        </div>
+        <br>
+        <button ion-button block class="linkedInButton">
+          Sync LinkedIn
+        </button>
+        <br>
+      </ion-card-content>
+      
+    </ion-card>
+</ion-content>
